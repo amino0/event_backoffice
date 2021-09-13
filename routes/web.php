@@ -14,5 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('list');
+});
+Route::view('login', 'livewire.home');
+
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
 });
